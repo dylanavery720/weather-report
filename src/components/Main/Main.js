@@ -1,7 +1,17 @@
 import React, { Component } from 'react'
 import Button from '../Button/Button'
+import Card from '../Card/Card'
 
 export default class Main extends Component {
+  constructor(){
+    super()
+    this.state = {
+      APIkey: '6384d47538058cc99891f13f4702e409',
+      draftMessage: 'London',
+      payload: null
+    }
+  }
+
   componentDidMount() {
     this.fetchWeatherForecast()
   }
@@ -17,16 +27,16 @@ export default class Main extends Component {
   // }
 
   fetchWeatherForecast(){
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=London&APPID=6384d47538058cc99891f13f4702e409`) 
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.draftMessage}&APPID=${this.state.APIkey}&units=imperial`) 
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => this.setState({payload: data}))
   }
 
   render() {
-    // const { fetch } = this.props
+    const { payload } = this.state
     return (
       <div>
-      <p>Working</p>
+      {payload && <Card payload={payload} />}
       </div>
     )
   }
