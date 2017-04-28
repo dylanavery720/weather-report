@@ -11,7 +11,14 @@ import history from './reducers/history'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(combineReducers({weather, history}), composeEnhancers(applyMiddleware(ReduxThunk)))
+const store = createStore(combineReducers({weather, history}), 
+    {   
+        weather: {},
+        history: {
+          searchHistory: [],
+        },
+      },
+    composeEnhancers(applyMiddleware(ReduxThunk)))
 
 
 

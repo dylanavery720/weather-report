@@ -10,13 +10,14 @@ class Main extends Component {
   constructor(){
     super()
     this.state = {
-      APIkey: '6384d47538058cc99891f13f4702e409',
-      draftMessage: 'London'
+      APIkey: "6384d47538058cc99891f13f4702e409",
+      draftMessage: ""
     }
+    this.fetchWeatherForecast = this.fetchWeatherForecast.bind(this)
   }
 
-  componentDidMount() {
-    this.fetchWeatherForecast()
+  handleChange(e){
+    this.setState({draftMessage: e.target.value})
   }
 
   fetchWeatherForecast(){
@@ -28,6 +29,8 @@ class Main extends Component {
   render() {
     return (
       <div className="main">
+      <input placeholder="Enter a city..." onChange={(e) => this.handleChange(e)} value={this.state.draftMessage} />
+      <Button text="Submit" handleClick={this.fetchWeatherForecast} /> 
       {this.props.weather && <Card payload={this.props.weather} />}
       </div>
     )
