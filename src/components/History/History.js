@@ -17,20 +17,20 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    this.fetchWeatherForecast()
+   
   }
 
-  fetchWeatherForecast(){
+  loadSearchHistory(){
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.draftMessage}&APPID=${this.state.APIkey}&units=imperial`) 
     .then(response => response.json())
-    .then(data => this.props.saveWeather(data))
+    .then(data => this.props.displayWeatherForecast(data))
   }
 
   render() {
     const { payload } = this.state
     return (
-      <div className="main">
-      {this.props.weather && <Card payload={this.props.weather} />}
+      <div className="search-history">
+      {this.loadSearchHistory()}
       </div>
     )
   }
