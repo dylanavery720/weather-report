@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import Button from '../Button/Button'
 import Card from '../Card/Card'
+import AppContainer from '../../containers/AppContainer'
 
-export default class Main extends Component {
+
+class Main extends Component {
   constructor(){
     super()
     this.state = {
@@ -16,29 +18,20 @@ export default class Main extends Component {
     this.fetchWeatherForecast()
   }
 
-  // handleSearch(e) {
-  //   this.setState({ draftMessage: e.target.value }, () => {
-  //     if (this.state.draftMessage.length > 0) {
-  //       this.props.fetchData()
-  //     } else {
-  //       this.props.fetchData()
-  //     }
-  //   })
-  // }
-
   fetchWeatherForecast(){
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.draftMessage}&APPID=${this.state.APIkey}&units=imperial`) 
     .then(response => response.json())
-    .then(data => this.setState({payload: data}))
+    .then(data => this.props.displayWeatherForecast(data))
   }
 
   render() {
     const { payload } = this.state
     return (
       <div>
-      {payload && <Card payload={payload} />}
+      {this.props.weather && <Card payload={this.props.weather} />}
       </div>
     )
   }
 }
 
+export default AppContainer(Main);
