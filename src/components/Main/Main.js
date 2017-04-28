@@ -16,16 +16,6 @@ export default class Main extends Component {
     this.fetchWeatherForecast()
   }
 
-  // handleSearch(e) {
-  //   this.setState({ draftMessage: e.target.value }, () => {
-  //     if (this.state.draftMessage.length > 0) {
-  //       this.props.fetchData()
-  //     } else {
-  //       this.props.fetchData()
-  //     }
-  //   })
-  // }
-
   fetchWeatherForecast(){
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.draftMessage}&APPID=${this.state.APIkey}&units=imperial`) 
     .then(response => response.json())
