@@ -11,8 +11,7 @@ class Main extends Component {
     super()
     this.state = {
       APIkey: '6384d47538058cc99891f13f4702e409',
-      draftMessage: 'London',
-      payload: null
+      draftMessage: 'London'
     }
   }
 
@@ -27,7 +26,6 @@ class Main extends Component {
   }
 
   render() {
-    const { payload } = this.state
     return (
       <div className="main">
       {this.props.weather && <Card payload={this.props.weather} />}
