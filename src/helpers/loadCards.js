@@ -2,8 +2,8 @@
   import Card from '../components/Card/Card'
   
   const loadCards = (array) => {
-    return array.map(payload => {
-        return <Card payload={payload} />
+    return array.map((payload, i) => {
+        return <Card key={i} payload={payload} />
     })
   }
 

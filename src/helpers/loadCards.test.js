@@ -7,7 +7,6 @@ describe('loadCards', () => {
     assert.isFunction(loadCards);
   });
   xit('should generate a number between min and max', () => {
-    // Create fake array of past searches in order to test this.
     const n = loadCards(searchedArray)
     assert.deepEqual(n, [payload, payload, payload]);
   });

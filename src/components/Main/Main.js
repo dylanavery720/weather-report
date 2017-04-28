@@ -29,9 +29,9 @@ class Main extends Component {
   render() {
     return (
       <div className="main">
-      <input placeholder="Enter a city..." onChange={(e) => this.handleChange(e)} value={this.state.draftMessage} />
-      <Button text="Submit" handleClick={this.fetchWeatherForecast} /> 
-      {this.props.weather && <Card payload={this.props.weather} />}
+        <input placeholder="Enter a city..." onChange={(e) => this.handleChange(e)} value={this.state.draftMessage} />
+        <Button text="Submit" handleClick={this.fetchWeatherForecast} /> 
+        {this.props.weather && <Card payload={this.props.weather} />}
       </div>
     )
   }
