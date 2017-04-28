@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-// import { expect, assert } from 'chai';
 import sinon from 'sinon'
 import * as actions from './index'
 

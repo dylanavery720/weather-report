@@ -4,8 +4,6 @@ import Card from '../Card/Card'
 import AppContainer from '../../containers/AppContainer'
 import './Main.css';
 
-
-
 class Main extends Component {
   constructor(){
     super()
