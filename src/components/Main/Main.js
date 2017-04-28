@@ -16,7 +16,6 @@ class Main extends Component {
 
   componentDidMount() {
     this.fetchWeatherForecast()
-    // ADD TO LIST OF SEARCHES THE NAME OF CITY AND CURRENT TEMP IN A LIST DISPLAYED ON SIDE.
   }
 
   fetchWeatherForecast(){
@@ -27,7 +26,6 @@ class Main extends Component {
 
   render() {
     const { payload } = this.state
-    console.log(this.props)
     return (
       <div>
       {this.props.weather && <Card payload={this.props.weather} />}

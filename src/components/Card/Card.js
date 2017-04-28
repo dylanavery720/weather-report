@@ -8,6 +8,7 @@ const Card = (props) => (
      <h3>High: {props.payload.main.temp_max}</h3> 
      <h3>Low: {props.payload.main.temp_min}</h3> 
      <h3>Wind Speed: {props.payload.wind.speed}</h3> 
+     <h3>Time of Search: {String(new Date)}</h3>
    </div>
 )
 
