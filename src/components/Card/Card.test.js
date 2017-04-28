@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { shallow, mount } from 'enzyme';
 import Card from './Card';
 
 const payload = {
@@ -50,3 +51,8 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<Card payload={payload} />, div);
 });
+
+it('should render a weather card with a descriptive forecast', () => {
+    const wrapper = mount(<Card payload={payload} />);
+    expect(wrapper.find('h2').text()).toEqual('Forecast: light rain');
+  });

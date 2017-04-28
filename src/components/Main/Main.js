@@ -16,6 +16,7 @@ class Main extends Component {
 
   componentDidMount() {
     this.fetchWeatherForecast()
+    // ADD TO LIST OF SEARCHES THE NAME OF CITY AND CURRENT TEMP IN A LIST DISPLAYED ON SIDE.
   }
 
   fetchWeatherForecast(){
