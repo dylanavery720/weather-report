@@ -1,15 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { displayWeatherForecast } from '../actions'
+import { displayWeatherForecast, saveWeather } from '../actions'
 
 const mapStateToProps = (state) => {
   return {
-    weather: state.forecast
+    weather: state.weather.forecast,
+    history: state.history.searchHistory
   }
 }
 
 const mapDispatchToProps = {
-  displayWeatherForecast
+  displayWeatherForecast,
+  saveWeather
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)

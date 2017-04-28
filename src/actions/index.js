@@ -5,9 +5,16 @@ export const displayWeatherForecast = (payload) => {
   }
 }
 
-export const deleteFave = (movie) => {
+export const searchHistory = (payload) => {
   return {
-    type: 'DELETE_FAVE',
-    movie,
+    type: 'DISPLAY_HISTORY',
+    payload
+  }
+}
+
+export const saveWeather = (payload) => {
+  return (dispatch) => {
+    dispatch(searchHistory(payload))
+    dispatch(displayWeatherForecast(payload))    
   }
 }
