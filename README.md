@@ -2,5 +2,5 @@
 
 ### Dylan Avery
 
-To beging, clone this repo down, and `npm install`. Then `npm start`.
+To begin, clone this repo down, and `npm install`. Then `npm start`.
 
